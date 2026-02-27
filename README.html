@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STUDIO TWO | Fashion Startup</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation - Simple and clean */
+        .navbar {
+            background-color: #ffffff;
+            padding: 24px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #000000;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: #ff4d4d;
+            font-weight: 400;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #1a1a1a;
+            font-weight: 500;
+            margin-left: 40px;
+            transition: color 0.3s;
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover {
+            color: #ff4d4d;
+        }
+
+        /* Hero Section - Two students story */
+        .hero {
+            padding: 100px 0 80px;
+            background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: 'STUDIO TWO';
+            position: absolute;
+            top: 20%;
+            right: -50px;
+            font-size: 12rem;
+            font-weight: 800;
+            color: rgba(0,0,0,0.02);
+            letter-spacing: 10px;
+            transform: rotate(-15deg);
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .hero .container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-content .badge {
+            display: inline-block;
+            background-color: #ff4d4d;
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 50px;
+            margin-bottom: 30px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.8rem;
+            font-weight: 800;
+            line-height: 1.1;
+            color: #000000;
+            margin-bottom: 25px;
+            letter-spacing: -2px;
+        }
+
+        .hero-content .highlight {
+            color: #ff4d4d;
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-content .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background-color: rgba(255, 77, 77, 0.2);
+            z-index: -1;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            color: #666666;
+            margin-bottom: 40px;
+            max-width: 550px;
+        }
+
+        .founder-names {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .founder-name {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .founder-avatar-small {
+            width: 50px;
+            height: 50px;
+            background-color: #ff4d4d;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .founder-name p {
+            margin: 0;
+            font-weight: 600;
+            color: #1a1a1a;
+            font-size: 1rem;
+        }
+
+        .founder-name span {
+            color: #666;
+            font-weight: 400;
+            font-size: 0.9rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background-color: #ff4d4d;
+            color: white;
+            box-shadow: 0 10px 30px rgba(255, 77, 77, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #ff3333;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(255, 77, 77, 0.4);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: #1a1a1a;
+            border: 2px solid #e0e0e0;
+        }
+
+        .btn-outline:hover {
+            border-color: #ff4d4d;
+            color: #ff4d4d;
+        }
+
+        .hero-image {
+            flex: 1;
+            background: linear-gradient(145deg, #ff4d4d, #ff8888);
+            border-radius: 30px;
+            padding: 100px 40px;
+            text-align: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            box-shadow: 0 30px 60px rgba(255, 77, 77, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image::after {
+            content: '👕👚';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 8rem;
+            opacity: 0.2;
+            color: white;
+        }
+
+        /* The Ask Section - Funding pitch */
+        .funding-ask {
+            padding: 60px 0;
+            background-color: #ff4d4d;
+            color: white;
+        }
+
+        .funding-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+
+        .funding-item h2 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .funding-item p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            letter-spacing: 0.5px;
+        }
+
+        .funding-item .small {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-top: 10px;
+        }
+
+        /* Our Story - Two students */
+        .story {
+            padding: 100px 0;
+            background-color: #ffffff;
+        }
+
+        .story h2 {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #000000;
+            letter-spacing: -1px;
+        }
+
+        .story-subhead {
+            text-align: center;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 60px;
+            font-size: 1.2rem;
+        }
+
+        .story-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .story-block {
+            display: flex;
+            gap: 50px;
+            margin-bottom: 70px;
+            align-items: center;
+            background: #fafafa;
+            padding: 40px;
+            border-radius: 30px;
+            transition: transform 0.3s;
+        }
+
+        .story-block:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        .story-block.reverse {
+            flex-direction: row-reverse;
+            background: #f5f5f5;
+        }
+
+        .story-year {
+            font-size: 4rem;
+            font-weight: 800;
+            color: #ff4d4d;
+            line-height: 1;
+            min-width: 120px;
+            opacity: 0.3;
+        }
+
+        .story-text {
+            flex: 1;
+        }
+
+        .story-text h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #000000;
+            font-weight: 700;
+        }
+
+        .story-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .founder-quote {
+            font-style: italic;
+            color: #ff4d4d;
+            font-size: 1.4rem;
+            font-weight: 500;
+            border-left: 4px solid #ff4d4d;
+            padding-left: 40px;
+            text-align: left;
+            margin: 60px 0;
+            background: #fafafa;
+            padding: 40px;
+            border-radius: 20px;
+        }
+
+        /* Collection Section */
+        .collection {
+            padding: 100px 0;
+            background-color: #fafafa;
+        }
+
+        .collection h2 {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #000000;
+            letter-spacing: -1px;
+        }
+
+        .section-subhead {
+            text-align: center;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 60px;
+            font-size: 1.2rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 24px;
+            padding: 30px;
+            text-align: left;
+            transition: all 0.3s;
+            border: 1px solid #f0f0f0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(255,77,77,0.1);
+            border-color: #ff4d4d;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(145deg, #ff4d4d20, #ff888820);
+            border-radius: 20px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .product-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #000000;
+            font-weight: 700;
+        }
+
+        .product-description {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .product-price {
+            font-size: 1.8rem;
+            color: #ff4d4d;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+
+        .product-price small {
+            font-size: 1rem;
+            color: #999;
+            font-weight: 400;
+        }
+
+        .product-tag {
+            display: inline-block;
+            background: #ff4d4d10;
+            color: #ff4d4d;
+            padding: 6px 12px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        /* Why Invest Section */
+        .why-invest {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .why-invest h2 {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #000000;
+            letter-spacing: -1px;
+        }
+
+        .invest-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .invest-card {
+            background: #fafafa;
+            border-radius: 30px;
+            padding: 50px 40px;
+            transition: all 0.3s;
+            border: 1px solid #f0f0f0;
+        }
+
+        .invest-card:hover {
+            background: #ff4d4d;
+            color: white;
+        }
+
+        .invest-card:hover .invest-icon,
+        .invest-card:hover h3,
+        .invest-card:hover p {
+            color: white;
+        }
+
+        .invest-icon {
+            font-size: 3rem;
+            color: #ff4d4d;
+            margin-bottom: 30px;
+        }
+
+        .invest-card h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #000000;
+            font-weight: 700;
+        }
+
+        .invest-card p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .invest-card:hover p {
+            color: rgba(255,255,255,0.9);
+        }
+
+        /* Founders Section - Two students */
+        .founders {
+            padding: 100px 0;
+            background-color: #fafafa;
+        }
+
+        .founders h2 {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 60px;
+            color: #000000;
+            letter-spacing: -1px;
+        }
+
+        .founders-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .founder-card {
+            background: white;
+            border-radius: 30px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.02);
+            border: 1px solid #f0f0f0;
+            transition: transform 0.3s;
+        }
+
+        .founder-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(255,77,77,0.1);
+            border-color: #ff4d4d;
+        }
+
+        .founder-avatar {
+            width: 180px;
+            height: 180px;
+            background: linear-gradient(145deg, #ff4d4d, #ff8888);
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3.5rem;
+            font-weight: 700;
+            border: 4px solid white;
+            box-shadow: 0 15px 30px rgba(255,77,77,0.2);
+        }
+
+        .founder-card h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #000000;
+            font-weight: 700;
+        }
+
+        .founder-role {
+            color: #ff4d4d;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .founder-bio {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .founder-social {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            color: #999;
+            font-size: 1.2rem;
+        }
+
+        /* Contact / Pitch */
+        .pitch {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #000000, #1a1a1a);
+            color: white;
+        }
+
+        .pitch h2 {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: white;
+            letter-spacing: -1px;
+        }
+
+        .pitch-subhead {
+            text-align: center;
+            color: #b0b0b0;
+            max-width: 600px;
+            margin: 0 auto 50px;
+            font-size: 1.2rem;
+        }
+
+        .pitch-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .pitch-form input, .pitch-form textarea {
+            padding: 18px 25px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 50px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s;
+            color: white;
+        }
+
+        .pitch-form input:focus, .pitch-form textarea:focus {
+            outline: none;
+            border-color: #ff4d4d;
+            background: rgba(255,77,77,0.1);
+        }
+
+        .pitch-form textarea {
+            border-radius: 30px;
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .pitch-form button {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 18px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+
+        .pitch-form button:hover {
+            background-color: #ff3333;
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px rgba(255,77,77,0.3);
+        }
+
+        .investor-note {
+            text-align: center;
+            margin-top: 40px;
+            color: #888;
+            font-size: 0.95rem;
+        }
+
+        .investor-note a {
+            color: #ff4d4d;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #0a0a0a;
+            color: #888;
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo span {
+            color: #ff4d4d;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 30px 0;
+        }
+
+        .footer-links a {
+            color: #b0b0b0;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: #ff4d4d;
+        }
+
+        .footer p {
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .product-grid, .invest-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            
+            .founder-names {
+                justify-content: center;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .funding-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .story-block, .story-block.reverse {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+                padding: 30px;
+            }
+            
+            .story-year {
+                font-size: 3rem;
+            }
+            
+            .product-grid, .invest-grid, .founders-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links a {
+                margin-left: 20px;
+            }
+            
+            .navbar .container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">STUDIO <span>TWO</span></div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#story">Our Story</a>
+                <a href="#collection">Collection</a>
+                <a href="#founders">Founders</a>
+                <a href="#pitch">Pitch</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section - Two Students -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="badge">Two students. One vision.</div>
+                <h1>
+                    We're building the 
+                    <span class="highlight">next-gen fashion</span>
+                    brand
+                </h1>
+                <p>Hi, we're Alex and Alizhan — two students with a big dream. We're creating sustainable, stylish clothing for our generation. And we're looking for partners to join the journey.</p>
+                
+                <div class="founder-names">
+                    <div class="founder-name">
+                        <div class="founder-avatar-small">A</div>
+                        <p>Alexandr <span>· 21, Business</span></p>
+                    </div>
+                    <div class="founder-name">
+                        <div class="founder-avatar-small">M</div>
+                        <p>Alizhan <span>· 19, Design</span></p>
+                    </div>
+                </div>
+                
+                <div class="hero-buttons">
+                    <a href="#pitch" class="btn btn-primary">Invest in our vision</a>
+                    <a href="#collection" class="btn btn-outline">See collection</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                From dorm room to runway
+            </div>
+        </div>
+    </section>
+
+    <!-- The Ask / Funding Section -->
+    <section class="funding-ask">
+        <div class="container">
+            <div class="funding-grid">
+                <div class="funding-item">
+                    <h2>$50k</h2>
+                    <p>Funding goal</p>
+                    <div class="small">To launch first collection</div>
+                </div>
+                <div class="funding-item">
+                    <h2>5%</h2>
+                    <p>Equity offered</p>
+                    <div class="small">For strategic partners</div>
+                </div>
+                <div class="funding-item">
+                    <h2>2025</h2>
+                    <p>Launch date</p>
+                    <div class="small">Spring collection</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story - Two Students Journey -->
+    <section class="story" id="story">
+        <div class="container">
+            <h2>Our story</h2>
+            <p class="story-subhead">How two broke students decided to start a fashion brand</p>
+            
+            <div class="story-content">
+                
+                <div class="story-block">
+                    <div class="story-year">2023</div>
+                    <div class="story-text">
+                        <h3>Freshman year</h3>
+                        <p>Alex and Alizhan met in Economics 101. They bonded over complaining about how expensive sustainable fashion was. "Why is everything ethical so boring and expensive?" That late-night conversation in the campus cafeteria became the seed of Studio Two.</p>
+                    </div>
+                </div>
+                
+                <div class="story-block reverse">
+                    <div class="story-year">2024</div>
+                    <div class="story-text">
+                        <h3>The first samples</h3>
+                        <p>With $2,000 saved from summer jobs, they designed their first three pieces. Alizhan sketched. Alex handled the spreadsheets. They found a small manufacturer who believed in them. The samples weren't perfect — but they were real.</p>
+                    </div>
+                </div>
+                
+                <div class="story-block">
+                    <div class="story-year">2025</div>
+                    <div class="story-text">
+                        <h3>Today</h3>
+                        <p>We've pre-sold 200 pieces to fellow students. We've been featured in the university magazine. And we've realized: this is bigger than us. We're ready to take Studio Two from a side project to a real brand. But we need help to get there.</p>
+                    </div>
+                </div>
+                
+                <div class="founder-quote">
+                    "We're not just selling clothes. We're building a community for young people who want to look good and feel good about what they wear. Sustainable shouldn't mean boring. Affordable shouldn't mean disposable."
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Collection Section -->
+    <section class="collection" id="collection">
+        <div class="container">
+            <h2>First collection</h2>
+            <p class="section-subhead">Five essential pieces. Designed for real life.</p>
+            
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">👕</div>
+                    <div class="product-tag">Best seller</div>
+                    <h3>The Classic Tee</h3>
+                    <p class="product-description">100% organic cotton. Perfect fit. 5 colors. Made ethically in Kazakhstan.</p>
+                    <div class="product-price">$45 <small>retail</small></div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">👖</div>
+                    <div class="product-tag">New</div>
+                    <h3>Relaxed Jeans</h3>
+                    <p class="product-description">Recycled denim. Vintage wash. Built to last. Our most anticipated piece.</p>
+                    <div class="product-price">$89 <small>retail</small></div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">🧥</div>
+                    <div class="product-tag">Limited</div>
+                    <h3>Oversized Hoodie</h3>
+                    <p class="product-description">Heavyweight cotton. Embroidery details. Pre-sold 50 units already.</p>
+                    <div class="product-price">$75 <small>retail</small></div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <p style="color: #666;">Pre-sales so far: <strong>200+ units</strong> · Revenue: <strong>$12,000</strong> (all reinvested)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Invest Section -->
+    <section class="why-invest">
+        <div class="container">
+            <h2>Why invest in two students?</h2>
+            <p class="section-subhead">We may be young, but we're serious about building something real.</p>
+            
+            <div class="invest-grid">
+                <div class="invest-card">
+                    <div class="invest-icon">📈</div>
+                    <h3>Traction</h3>
+                    <p>200+ pre-orders from our campus alone. 5,000 social media followers. 0 marketing spend. Word of mouth is working.</p>
+                </div>
+                
+                <div class="invest-card">
+                    <div class="invest-icon">🎓</div>
+                    <h3>The founders</h3>
+                    <p>Alex (Business) has interned at a VC firm. Alizh (Design) won a sustainable fashion award. We complement each other perfectly.</p>
+                </div>
+                
+                <div class="invest-card">
+                    <div class="invest-icon">🌱</div>
+                    <h3>Sustainability</h3>
+                    <p>Organic materials, ethical production, minimal waste. This isn't marketing — it's how we'd want to buy clothes ourselves.</p>
+                </div>
+                
+                <div class="invest-card">
+                    <div class="invest-icon">💰</div>
+                    <h3>The numbers</h3>
+                    <p>60% gross margin. $50k gets us to 1,000 units and our first proper collection. Break-even projected in 12 months.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founders Section - Two Students -->
+    <section class="founders" id="founders">
+        <div class="container">
+            <h2>The founders</h2>
+            
+            <div class="founders-grid">
+                <div class="founder-card">
+                    <div class="founder-avatar">A</div>
+                    <h3>Alexandr Saiko</h3>
+                    <div class="founder-role">Co-founder · Operations</div>
+                    <p class="founder-bio">21 years old. Studying Cybersecurity. Previously interned at a fashion startup in NYC. Handles numbers, manufacturing, and strategy. Obsessed with supply chain efficiency.</p>
+                    <div class="founder-social">
+                        <span>📧 alex@studiotwo.com</span>
+                    </div>
+                </div>
+                
+                <div class="founder-card">
+                    <div class="founder-avatar">M</div>
+                    <h3>Alizhan Zhelpalov </h3>
+                    <div class="founder-role">Co-founder · Creative</div>
+                    <p class="founder-bio">19 years old. Studying Cybersecurity. Won the Young Designer Award 2024. Handles all design, branding, and creative direction. Dreams in color and fabric.</p>
+                    <div class="founder-social">
+                        <span>📧 alizh@studiotwo.com</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px; color: #666;">
+                <p>We've known each other for 3 years. We've never missed a deadline. We've never given up.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pitch / Contact Section -->
+    <section class="pitch" id="pitch">
+        <div class="container">
+            <h2>Let's talk</h2>
+            <p class="pitch-subhead">Interested in joining our journey? Want to see the samples? Let's grab a coffee (on us, finally).</p>
+            
+            <form class="pitch-form">
+                <input type="text" placeholder="Your name" required>
+                <input type="email" placeholder="Email address" required>
+                <input type="text" placeholder="Company / Angel / VC">
+                <textarea placeholder="Tell us about yourself... Why are you interested in STUDIO TWO?"></textarea>
+                <button type="submit">Send pitch deck request</button>
+            </form>
+            
+            <div class="investor-note">
+                <p>We'll send you our pitch deck within 24 hours. <a href="#">Download one-pager</a> (PDF)</p>
+                <p style="margin-top: 20px;">📧 founders@studiotwo.com · 📞 (415) 555-0123</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">STUDIO <span>TWO</span></div>
+            
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#story">Story</a>
+                <a href="#collection">Collection</a>
+                <a href="#founders">Founders</a>
+                <a href="#pitch">Pitch</a>
+            </div>
+            
+            <p>© 2025 STUDIO TWO. All rights reserved.</p>
+            <p>Made in a dorm room, with big dreams. 🌱 San Francisco, CA</p>
+            <p style="margin-top: 20px; font-size: 0.8rem;">Looking for $50k to change how our generation dresses.</p>
+        </div>
+    </footer>
+
+    <!-- Smooth scroll -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

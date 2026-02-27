@@ -1,2 +1,0 @@
-# pisynchik
-html 
